@@ -34,27 +34,50 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
     ),
   ];
 
+  int selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: items.asMap().entries.map((item) {
-        if (item.key == 1) {
+        int index = item.key;
+        if (index == 1) {
           return Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: AllExpensesItem(
-                allExpansesItemModel: item.value,
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: AllExpensesItem(
+                  allExpansesItemModel: item.value,
+                  isSelected: selectedIndex == index,
+                ),
               ),
             ),
           );
         } else {
           return Expanded(
-            child: AllExpensesItem(
-              allExpansesItemModel: item.value,
+            child: GestureDetector(
+              onTap: () {
+                updateIndex(index);
+              },
+              child: AllExpensesItem(
+                allExpansesItemModel: item.value,
+                isSelected: selectedIndex == index,
+              ),
             ),
           );
         }
       }).toList(),
     );
+  }
+
+  void updateIndex(int index) {
+    if (selectedIndex != index) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
   }
 }

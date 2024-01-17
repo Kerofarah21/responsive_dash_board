@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class AllExpensesItemHeader extends StatelessWidget {
-  const AllExpensesItemHeader({super.key, required this.image});
+  const AllExpensesItemHeader({
+    super.key,
+    required this.image,
+    this.backgroundColor,
+    this.imageColor,
+    this.iconColor,
+  });
 
   final String image;
+  final Color? backgroundColor, imageColor, iconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +20,26 @@ class AllExpensesItemHeader extends StatelessWidget {
         Container(
           width: 60,
           height: 60,
-          decoration: const ShapeDecoration(
-            color: Color(0xFFFAFAFA),
-            shape: OvalBorder(),
+          decoration: ShapeDecoration(
+            color: backgroundColor ?? const Color(0xFFFAFAFA),
+            shape: const OvalBorder(),
           ),
-          child: Center(child: SvgPicture.asset(image)),
+          child: Center(
+            child: SvgPicture.asset(
+              image,
+              colorFilter: ColorFilter.mode(
+                imageColor ?? const Color(0xff4EB7F2),
+                BlendMode.srcIn,
+              ),
+            ),
+          ),
         ),
         const Spacer(),
         Transform.rotate(
           angle: -1.57079633 * 2,
-          child: const Icon(
+          child: Icon(
             Icons.arrow_back_ios_new_outlined,
-            color: Color(0xFF064060),
+            color: iconColor ?? const Color(0xFF064060),
           ),
         )
       ],
