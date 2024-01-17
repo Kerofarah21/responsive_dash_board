@@ -28,17 +28,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           DrawerItemsListView(),
-          SliverToBoxAdapter(
-            child: SizedBox(
-              height: 20,
-            ),
-          ),
           SliverFillRemaining(
             hasScrollBody: false,
             child: Column(
               children: [
                 Expanded(
-                  child: SizedBox(),
+                  child: SizedBox(
+                    height: 20,
+                  ),
                 ),
                 InActiveDrawerItem(
                   drawerItemModel: DrawerItemModel(
