@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../models/user_info_model.dart';
 import '../utils/app_styles.dart';
 
 class UserInfoListTile extends StatelessWidget {
-  final String image, title, subtitle;
+  final UserInfoModel userInfoModel;
 
   const UserInfoListTile({
     super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
+    required this.userInfoModel,
   });
 
   @override
@@ -18,15 +17,17 @@ class UserInfoListTile extends StatelessWidget {
     return Card(
       color: const Color(0xFFFAFAFA),
       elevation: 0,
-      child: ListTile(
-        leading: SvgPicture.asset(image),
-        title: Text(
-          title,
-          style: AppStyles.styleSemiBold16,
-        ),
-        subtitle: Text(
-          subtitle,
-          style: AppStyles.styleRegular12,
+      child: Center(
+        child: ListTile(
+          leading: SvgPicture.asset(userInfoModel.image),
+          title: Text(
+            userInfoModel.title,
+            style: AppStyles.styleSemiBold16,
+          ),
+          subtitle: Text(
+            userInfoModel.subtitle,
+            style: AppStyles.styleRegular12,
+          ),
         ),
       ),
     );
