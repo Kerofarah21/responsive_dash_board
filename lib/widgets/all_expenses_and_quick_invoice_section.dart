@@ -10,16 +10,24 @@ class AllExpensesAndQuickInVoiceSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        SizedBox(
-          height: 40,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 40,
+          ),
         ),
-        AllExpenses(),
-        SizedBox(
-          height: 24,
+        SliverToBoxAdapter(
+          child: AllExpenses(),
         ),
-        QuickInvoice(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 24,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: QuickInvoice(),
+        ),
       ],
     );
   }
