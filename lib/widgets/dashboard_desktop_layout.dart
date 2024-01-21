@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'all_expenses_and_quick_invoice_section.dart';
 import 'custom_drawer.dart';
-import 'my_cards_section.dart';
+import 'my_cards_and_transaction_history_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -26,7 +26,7 @@ class DashboardDesktopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 2,
-          child: MyCardsSection(),
+          child: MyCardsAndTransactionHistorySection(),
         ),
       ],
     );
