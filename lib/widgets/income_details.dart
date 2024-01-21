@@ -33,6 +33,7 @@ class IncomeDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (context, index) => IncomeItemDetails(
         incomeItemModel: items[index],
       ),
