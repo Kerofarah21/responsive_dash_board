@@ -36,7 +36,7 @@ class SelectedAllExpensesItem extends StatelessWidget {
           ),
           Text(
             allExpansesItemModel.title,
-            style: AppStyles.styleSemiBold16.copyWith(
+            style: AppStyles.styleSemiBold16(context).copyWith(
               color: Colors.white,
             ),
           ),
@@ -45,7 +45,7 @@ class SelectedAllExpensesItem extends StatelessWidget {
           ),
           Text(
             allExpansesItemModel.date,
-            style: AppStyles.styleRegular14.copyWith(
+            style: AppStyles.styleRegular14(context).copyWith(
               color: const Color(0xFFFAFAFA),
             ),
           ),
@@ -54,7 +54,7 @@ class SelectedAllExpensesItem extends StatelessWidget {
           ),
           Text(
             allExpansesItemModel.price,
-            style: AppStyles.styleSemiBold24.copyWith(
+            style: AppStyles.styleSemiBold24(context).copyWith(
               color: Colors.white,
             ),
           ),
@@ -93,18 +93,19 @@ class NotSelectedAllExpensesItem extends StatelessWidget {
           ),
           Text(
             allExpansesItemModel.title,
-            style: AppStyles.styleSemiBold16,
+            style: AppStyles.styleSemiBold16(context),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(allExpansesItemModel.date, style: AppStyles.styleRegular14),
+          Text(allExpansesItemModel.date,
+              style: AppStyles.styleRegular14(context)),
           const SizedBox(
             height: 16,
           ),
           Text(
             allExpansesItemModel.price,
-            style: AppStyles.styleSemiBold24,
+            style: AppStyles.styleSemiBold24(context),
           ),
         ],
       ),
