@@ -19,6 +19,7 @@ class SelectedAllExpensesItem extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0xFF4DB7F2),
         shape: RoundedRectangleBorder(
+          side: const BorderSide(width: 1, color: Color(0xFF4DB7F2)),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -34,28 +35,37 @@ class SelectedAllExpensesItem extends StatelessWidget {
           const SizedBox(
             height: 34,
           ),
-          Text(
-            allExpansesItemModel.title,
-            style: AppStyles.styleSemiBold16(context).copyWith(
-              color: Colors.white,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.title,
+              style: AppStyles.styleSemiBold16(context).copyWith(
+                color: Colors.white,
+              ),
             ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(
-            allExpansesItemModel.date,
-            style: AppStyles.styleRegular14(context).copyWith(
-              color: const Color(0xFFFAFAFA),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.date,
+              style: AppStyles.styleRegular14(context).copyWith(
+                color: const Color(0xFFFAFAFA),
+              ),
             ),
           ),
           const SizedBox(
             height: 16,
           ),
-          Text(
-            allExpansesItemModel.price,
-            style: AppStyles.styleSemiBold24(context).copyWith(
-              color: Colors.white,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.price,
+              style: AppStyles.styleSemiBold24(context).copyWith(
+                color: Colors.white,
+              ),
             ),
           ),
         ],
@@ -79,6 +89,7 @@ class NotSelectedAllExpensesItem extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
+          side: const BorderSide(width: 1, color: Color(0xFFF1F1F1)),
           borderRadius: BorderRadius.circular(12),
         ),
       ),
@@ -91,21 +102,32 @@ class NotSelectedAllExpensesItem extends StatelessWidget {
           const SizedBox(
             height: 34,
           ),
-          Text(
-            allExpansesItemModel.title,
-            style: AppStyles.styleSemiBold16(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
           ),
           const SizedBox(
             height: 8,
           ),
-          Text(allExpansesItemModel.date,
-              style: AppStyles.styleRegular14(context)),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.date,
+              style: AppStyles.styleRegular14(context),
+            ),
+          ),
           const SizedBox(
             height: 16,
           ),
-          Text(
-            allExpansesItemModel.price,
-            style: AppStyles.styleSemiBold24(context),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              allExpansesItemModel.price,
+              style: AppStyles.styleSemiBold24(context),
+            ),
           ),
         ],
       ),
